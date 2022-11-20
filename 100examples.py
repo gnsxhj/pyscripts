@@ -23,6 +23,60 @@ while True:
         else:
             print("输入的三边构不成三角形")
 
+#a = float(input('输入三角形第一边长: '))
+#b = float(input('输入三角形第二边长: '))
+#c = float(input('输入三角形第三边长: '))
+#
+## 计算半周长
+#s = (a + b + c) / 2
+#
+## 计算面积
+#area = (s*(s-a)*(s-b)*(s-c)) ** 0.5
+#print(f'三角形面积为{area:.2f}')
+#
+
+#import math
+#def triangle_area_calculate():
+#    judge = True
+#    while judge:
+#        a, b, c = sorted(eval(input('请输入三角形的三个边长（用逗号隔开）:'))) # sorted排序
+#        if a > 0 and b > 0 and c > 0:
+#            if c < a + b: #因为sorted的结果就是a<b<c, 所以只需要一个判断即可
+#                p = (a + b + c)/2
+#                S = math.sqrt(p*(p-a)*(p-b)*(p-c))
+#                print(f'三角形的面积是{S:.3f}')
+#                judge = False
+#            else:
+#                print('警告：三边不能构成三角形，请重新输入！！！')
+#if __name__ == '__main__':
+#    triangle_area_calculate()
+#
+
+### 平方根
+#num = float(input('请输入一个数字：'))
+#num_sqrt = num ** 0.5
+#print('%0.3f 的平方根为 %0.3f'%(num, num_sqrt))
+#print(f'{num:.3f} 的平方根为 {num_sqrt:.3f}')
+
+import cmath
+#num = int(input('请输入一个数字：'))
+#num_sqrt = cmath.sqrt(num)
+#print('{0} 的平方根为 {1:0.3f} + {2:0.3f}j'.format(num, num_sqrt.real, num_sqrt.imag))
+#print(f'{num:.3f} 的平方根为 {num_sqrt:.3f}')
+#
+try:
+    num = float(input('请输入一个数字：'))
+except:
+    print('输入的数字格式不正确，请重新输入！')
+else:
+    if num>=0:
+        num_sqrt = num**0.5
+        print(f'{num}的平方根是{num_sqrt:.3f}')
+    else:
+        num_sqrt = cmath.sqrt(num)
+        #print(f'{num:.3f} 的平方根为 {num_sqrt:.3f}')
+        print(f'{num:.3f} 的平方根为 {num_sqrt.real:.3f}+{num_sqrt.imag:.3f}j')
+
 # 二次方程
 import cmath
 
@@ -36,6 +90,7 @@ sol1 = (-b-cmath.sqrt(d))/(2*a)
 sol2 = (-b+cmath.sqrt(d))/(2*a)
 
 print('结果为 {0} 和 {1}'.format(sol1,sol2))
+#print(f'结果为{sol1:.3f}和{sol2:.3f}')
 
 # 二次方程式 ax**2 + bx + c = 0
 # a、b、c 用户提供，为实数，a ≠ 0
@@ -82,6 +137,55 @@ while True:
     active = input('\n是否继续？(y/n): ')
     if active == 'n':
         break
+
+#import math
+#import unicodedata
+#
+#def is_number(s):
+#    try:
+#        float(s)
+#        return True
+#    except ValueError:
+#        pass
+#    try:
+#        unicodedata.digit(s)
+#        return True
+#    except (TypeError, ValueError):
+#        pass
+#    return False
+#
+#a = input('输入 a: ')
+#b = input('输入 b: ')
+#c = input('输入 c: ')
+#
+#if is_number(a) and is_number(b) and is_number(c):
+#    a = float(a)
+#    b = float(b)
+#    c = float(c)
+#    if a == 0 and b == 0:
+#        print('不是方程， 不需要解！')
+#    elif a == 0 and b != 0:
+#        x = -c / b
+#        print(f'为一次方程式，结果为{x:.2f}')
+#    elif a != 0 and b == 0:
+#        d = -c / a
+#        if d >= 0:
+#            x = math.sqrt(d)
+#            print(f'x的结果为{x:.2f}')
+#        else:
+#            print('警告：该方程无解！！！')
+#    elif a != 0 and b != 0:
+#        d = (b**2) - (4*a*c)
+#        if d >= 0:
+#            x1 = (-b - math.sqrt(d)) / (2 * a)
+#            x2 = (-b + math.sqrt(d)) / (2 * a)
+#            print(f'方程的结果为：x1={x1:.2f}, x2={x2:.2f}')
+#        else:
+#            print('警告：该方程无解！！！')
+#    else:
+#        print('错误！！！')
+#else:
+#    print('请输入数字类型！！！')
 
 # 交换变量
 x = input('输入 x 值：')
@@ -161,6 +265,23 @@ def circle_area():
 
 circle_area()
 
+#import math
+#while True:
+#    try:
+#        r = float(input('请输入圆的半径r:'))
+#    except ValueError:
+#        print('请输入正确的数字!')
+#    else:
+#        if r >= 0:
+#            p = math.pi
+#            square = p*r**2
+#            print(f'圆的面积是：{square:.4f}')
+#        else:
+#            print()
+#        active = input('\n是否继续?(y/n):')
+#        if active == 'n':
+#            break
+
 # 奇偶数
 num = int(input("输入一个数字: "))
 if (num % 2) == 0:
@@ -170,11 +291,6 @@ else:
 
 num = eval(input('Number:\n'))
 print('{} is '.format(num) + ('even number.' if num % 2 == 0 else 'odd number.'))
-
-# 平方根
-num = float(input('input a number: '))
-num_sqrt = num ** 0.5
-print('%0.3f 的平方根是 %0.3f'%(num, num_sqrt))
 
 # 数字判断
 def is_number(s):
@@ -215,6 +331,19 @@ sum = float(num1) + float(num2)
 print('summary of number {0} and number {1} is: {2}'.format(num1, num2, sum))
 
 print('两数之和为 %.1f' %(float(input('输入第一个数字：'))+float(input('输入第二个数字：'))))
+#print(f'数字{num1}和数字{num2}相加结果为：{sum}')
+
+# while 1:
+#     num1 = input('输入第一个数字：')
+#     num2 = input('输入第二个数字：')
+#     try:
+#         sum = float(num1) + float(num2)
+#     except:
+#         print('输入的数字格式不正确，请重新输入！')
+#         continue
+#     else:
+#         print(f'俩个数字之和为: {sum:.0f}')
+#         break
 
 # 文件IO
 with open("test.txt", "wt") as out_file:
